@@ -3,9 +3,10 @@ import style from '../styles/column.module.css';
 
 type props = {
     title:string
+    cards:[]
 }
 
-function Column({title}:props) {
+function Column({title, cards}:props) {
     return(
         <div className={style.column}>
 
@@ -13,7 +14,14 @@ function Column({title}:props) {
                 {title}
             </h3>
             
-            <Card name="teste"/>
+
+            {
+                cards.map((name, index) => (
+                    <Card name={name} index={index}/>
+                ))
+            }
+
+            {/* <Card name="teste"/> */}
 
         </div>
     )
