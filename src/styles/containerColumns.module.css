@@ -1,0 +1,9 @@
+.containerColumns {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 16x;
+    padding: 24px 32px;
+    height: 100%;
+    overflow: auto;
+}

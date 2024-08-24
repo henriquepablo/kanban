@@ -1,0 +1,11 @@
+.card {
+    background-color: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.text {
+    font-size: 16px;
+    cursor: move;
+}
