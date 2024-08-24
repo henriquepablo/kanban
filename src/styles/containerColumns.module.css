@@ -1,9 +1,10 @@
 .containerColumns {
     display: flex;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: center;
     gap: 16x;
     padding: 24px 32px;
     height: 100%;
     overflow: auto;
+    flex-wrap: wrap;
 }

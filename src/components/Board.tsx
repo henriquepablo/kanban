@@ -8,6 +8,20 @@ export default function Board() {
         <div className={style.containerColumns}>
 
             <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
+            <Column title="Backlog"/>
             
 
         </div>
