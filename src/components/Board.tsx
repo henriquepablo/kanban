@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Column from "./Column";
 import style from '../styles/containerColumns.module.css';
+import styleForm from '../styles/form.module.css';
 
 export default function Board() {
 
@@ -18,6 +19,16 @@ export default function Board() {
     return (
       <div className="board">
         
+        <form className={styleForm.form}>
+        
+          <input placeholder="Adicionar nova tarefa" className={styleForm.input}/>
+        
+          <button className={styleForm.btnAdd}>
+            adicionar +
+          </button>
+        
+        </form>
+
         <div className={style.containerColumns}>
         
             {Object.keys(columns).map((key) => (

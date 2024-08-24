@@ -21,7 +21,7 @@ function Column({title, cards}:props) {
                 ))
             }
 
-            {/* <Card name="teste"/> */}
+            
 
         </div>
     )
