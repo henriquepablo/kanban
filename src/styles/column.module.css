@@ -9,6 +9,8 @@
     min-height: 120px;
     width: 225px;
     margin: 12px;
+    overflow-y: auto;
+    max-height: 500px;
 }
 
 .heading {
