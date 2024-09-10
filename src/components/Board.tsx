@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Column from "./Column";
 import style from '../styles/containerColumns.module.css';
-import styleForm from '../styles/form.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { tasks, removeTask } from "@/redux/reducers/task";
+import { useDispatch } from 'react-redux';
+import { removeTask } from "@/redux/reducers/task";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 
 
 export default function Board() {
-
-  const [tarefa, setTarefa] = useState('');
-
-  // aciona as actions
-  const dispacth = useDispatch();
 
   // recupera todas as tarefas do estado global
   // const list: any[] = useSelector((state:any) => state.tasks);
@@ -36,14 +30,6 @@ export default function Board() {
         Backlog: { ...prevColumns.Backlog, cards: list },
     }));
   }, [list]);
-  
-  // adiciona a tarefa no estado global
-  function addTask() {
-    if (tarefa == '') return alert('Informe o nome da tarefa');
-    setList((prev:any) => [...prev, tarefa]);
-    // dispacth(tasks(tarefa));
-    setTarefa('');
-  }
 
   const onDragEnd = (result:DropResult) => {
     const {source, destination} = result;
@@ -80,22 +66,11 @@ export default function Board() {
       [destColId]: { ...destColumn, cards: updatedDestCol },
     }));
 
-    dispacth(removeTask(item));
   }
 
     return (
       <DragDropContext onDragEnd={onDragEnd}>
       <div className="board">
-        
-        <div className={styleForm.form}>
-        
-          <input placeholder="Adicionar nova tarefa" className={styleForm.input} onChange={(text) => setTarefa(text.target.value)} value={tarefa}/>
-        
-          <button className={styleForm.btnAdd} onClick={addTask} type="button">
-            adicionar +
-          </button>
-        
-        </div>
 
         <div className={style.containerColumns}>
         
