@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Card from "./Card";
 import style from '../styles/column.module.css';
 import { Droppable } from "react-beautiful-dnd";
@@ -10,7 +11,7 @@ type props = {
 
 function Column({title, cards, id}:props) {
     return(
-        <Droppable droppableId={title} key={id}>
+        <Droppable droppableId={id.toString()} key={id}>
             {(provided) => (
                 <div className={style.column} ref={provided.innerRef} 
                 {...provided.droppableProps}
@@ -22,8 +23,8 @@ function Column({title, cards, id}:props) {
                     
 
                     {
-                        cards.map((name, index) => (
-                            <Card name={name} index={index} key={index} id={index}/>
+                        cards.map((item, index) => (
+                            <Card name={item.nomeOperacao} index={index} key={index} id={item.id}/>
                         ))
                     }
     

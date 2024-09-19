@@ -9,7 +9,7 @@ type props = {
 
 function Card({name, index, id}:props) {
     return(
-        <Draggable draggableId={name} index={index} key={index}>
+        <Draggable draggableId={id.toString()} index={index} key={id}>
 
             {(provided) => (
                 <div className={style.card} 
