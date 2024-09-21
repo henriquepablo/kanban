@@ -24,7 +24,7 @@ function Column({title, cards, id}:props) {
 
                     {
                         cards.map((item, index) => (
-                            <Card name={item.nomeOperacao} index={index} key={index} id={item.id}/>
+                            <Card name={item.title} index={index} key={index} assetid={item.assetid} informations={item}/>
                         ))
                     }
     
