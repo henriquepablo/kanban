@@ -7,5 +7,16 @@
 
 .text {
     font-size: 16px;
-    cursor: move;
+    margin-bottom: 5px;
+}
+
+.hr {
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.divHorizontal {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
