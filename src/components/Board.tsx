@@ -16,87 +16,31 @@ export default function Board() {
   // essa const armazena todas as colunas do fluxo selecionado
   const [colunasList, setColunasList] = useState([]);
 
-  const list = [{
-    "value": [
-      {
-        "assetid": 558889,
-        "codigoepisodio": "24-001",
-        "dataexib": "2024-01-08",
-        "title": "BAGUNÇA ORGANIZADA",
-        "statusid": 12,
-        "codigo": "PSLP",
-        "bulkloadid": 10,
-        "epcode": "000024-001",
-        "tempo_total": "00:23:00:09"
-      },
-      {
-        "assetid": 561513,
-        "codigoepisodio": "23-0001",
-        "dataexib": "2023-12-11",
-        "title": "Teste Código",
-        "statusid": 21,
-        "codigo": "PPTI",
-        "bulkloadid": 9,
-        "epcode": "00023-0001",
-        "tempo_total": "00:00:00:00"
-      },
-      {
-        "assetid": 561513,
-        "codigoepisodio": "23-0001",
-        "dataexib": "2023-12-11",
-        "title": "Teste Código",
-        "statusid": 21,
-        "codigo": "PPTI",
-        "bulkloadid": 9,
-        "epcode": "00023-0001",
-        "tempo_total": "00:00:00:00"
-      },
-      {
-        "assetid": 561513,
-        "codigoepisodio": "23-0001",
-        "dataexib": "2023-12-11",
-        "title": "Teste Código",
-        "statusid": 21,
-        "codigo": "PPTI",
-        "bulkloadid": 9,
-        "epcode": "00023-0001",
-        "tempo_total": "00:00:00:00"
-      }
-    ]
-    }]
+  const [movimentedCard, setMovimentedcard] = useState(false);
 
-  // useEffect(() => {
-  //   async function load() {
-  //       await api.get("fluxo/2")
-  //       .then((json) => {
-  //         setCards(json.data.operacoes);
-  //         setColunasList(json.data.colunas);
-  //       })
-  //       .catch(err => console.log(err));
-  //   } 
-  //   load();
+  useEffect(() => {
+    async function load() {
+        await api.get("fluxo/1")
+        .then((json) => {
+          setCards(json.data.operacoes);
+          setColunasList(json.data.colunas);
+          setMovimentedcard(false);
+        })
+        .catch(err => console.log(err));
+    } 
+    load();
     
-  //   return(() => {});
-  // }, [colunas]);
+    return(() => {});
+  }, [movimentedCard]);
 
-  // for(let i = 0; i < colunasList.length; i++) {
-  //   const listCards:object [] = [];
-  //   for (let y = 0; y < cards.length; y++) {
-  //       if (cards[y].colunaId == i+1) {
-  //         listCards.push(cards[y]);
-  //       }
-  //   }
-  //   colunas.push({id: i+1, nomeColuna: colunasList[i], cards: listCards})
-  // }
-
-  for(let i = 0; i < list[0].value.length; i++) {
+  for(let i = 0; i < colunasList.length; i++) {
     const listCards:object [] = [];
-    for (let y = 0; y < list[0].value.length; y++) {
-        if (list[0].value[y].statusid == list[0].value[i].statusid) {
-          listCards.push(list[0].value[y]);
+    for (let y = 0; y < cards.length; y++) {
+        if (cards[y].colunaId == i+1) {
+          listCards.push(cards[y]);
         }
     }
-    colunas.push({id: i+1, nomeColuna: list[0].value[i].statusid, cards: listCards})
+    colunas.push({id: i+1, nomeColuna: colunasList[i], cards: listCards})
   }
 
   async function updateColumn(operacaoId:number, colunaId:string) {
@@ -106,6 +50,7 @@ export default function Board() {
     })
     .then(() => {
       console.log('Movimentação concluída');
+      setMovimentedcard(true);
     }).catch(err => console.log(err))
   }
 
