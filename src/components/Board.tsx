@@ -15,20 +15,23 @@ export default function Board() {
 
   // essa const armazena todas as colunas do fluxo selecionado
   const [colunasList, setColunasList] = useState([]);
-  
+
+  const [movimentedCard, setMovimentedcard] = useState(false);
+
   useEffect(() => {
     async function load() {
-        await api.get("fluxo/9")
+        await api.get("fluxo/1")
         .then((json) => {
           setCards(json.data.operacoes);
           setColunasList(json.data.colunas);
+          setMovimentedcard(false);
         })
         .catch(err => console.log(err));
     } 
     load();
     
     return(() => {});
-  }, [colunas]);
+  }, [movimentedCard]);
 
   for(let i = 0; i < colunasList.length; i++) {
     const listCards:object [] = [];
@@ -47,6 +50,7 @@ export default function Board() {
     })
     .then(() => {
       console.log('Movimentação concluída');
+      setMovimentedcard(true);
     }).catch(err => console.log(err))
   }
 
