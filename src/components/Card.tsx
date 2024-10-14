@@ -11,7 +11,7 @@ type props = {
 
 function Card({name, index, assetid, informations}:props) {
     return(
-        <Draggable draggableId={assetid.toString()} index={index} key={index}>
+        <Draggable draggableId={assetid.toString()} index={index} key={assetid}>
 
             {(provided) => (
                 <div className={style.card} 
@@ -24,7 +24,7 @@ function Card({name, index, assetid, informations}:props) {
                             {name}
                         </p>
 
-                        <abbr title={`data de início: ${informations.dataexib}`}>
+                        <abbr title={`data de início: ${informations.dataInicio[2] + '/' + informations.dataInicio[1] + '/' + informations.dataInicio[0]}`}>
                             <Info size={19} color='gray' width={'100%'}/>
                         </abbr>
                     </div>
@@ -32,28 +32,22 @@ function Card({name, index, assetid, informations}:props) {
                     <hr className={style.hr}/>
                     
                     <p className={style.text} style={{fontSize: '15px'}}>
-                        Data de entrega: 
+                        {informations.dataEntrega[2] + '/' + informations.dataEntrega[1] + '/' + informations.dataEntrega[0]} 
                     </p>
 
                     <h4>
-                        Responsável: 
+                        {informations.responsavel} 
                     </h4>
 
                     <hr className={style.hr}/>
 
                     <div className={style.divHorizontal}>
                         <p style={{textAlign: 'center', fontWeight: 'bold'}}>
-                            AssetId
-                            <p style={{fontWeight: 'normal'}}>
                             {assetid}
-                            </p>
                         </p>
                        
                         <p style={{textAlign: 'center', fontWeight: 'bold'}}>
-                            Código
-                            <p style={{fontWeight: 'normal'}}>
                             {informations.codigo}
-                            </p>
                         </p>
                        
                     </div>

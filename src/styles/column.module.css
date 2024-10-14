@@ -4,7 +4,7 @@
     gap: 12px;
     background-color: #f4f4f4;
     box-shadow: 0x 5px 15px rgba(0, 0, 0, 0.25);
-    padding: 12px;
+    /* padding: 12px; */
     border-radius: 4px;
     min-height: 120px;
     width: 330px;
@@ -16,5 +16,11 @@
 .heading {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: 8px;
+}
+
+.containerHeader {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    padding: 12px;
 }

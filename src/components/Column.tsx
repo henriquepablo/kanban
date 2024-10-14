@@ -16,15 +16,17 @@ function Column({title, cards, id}:props) {
                 <div className={style.column} ref={provided.innerRef} 
                 {...provided.droppableProps}
                 >
-
+                
+                <div className={style.containerHeader}>
                     <h3 className={style.heading}>
                         {title}
                     </h3>
+                </div>
                     
 
                     {
                         cards.map((item, index) => (
-                            <Card name={item.title} index={index} key={index} assetid={item.assetid} informations={item}/>
+                            <Card name={item.nomeOperacao} index={index} key={index} assetid={item.id} informations={item}/>
                         ))
                     }
     
