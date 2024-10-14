@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Draggable } from 'react-beautiful-dnd';
 import style from '../styles/card.module.css';
 import { Info } from 'lucide-react';

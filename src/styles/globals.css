@@ -94,7 +94,7 @@ body {
     ) */
      background-color: #d2d2d2a3;
     /* rgb(var(--background-start-rgb)); */
-    background-image: url('/logo.png') ;
+    background-image: url('/kanban/logo.png') ;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
