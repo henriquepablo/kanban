@@ -14,7 +14,7 @@ Primeiro verifique se o docker esta instalado na máquina (docker -v), caso não
 
 Depois do docker estiver instalado e dos arquivos já estiver na máquina do cliente (mova os arquivos do respositório para /opt/kanban), faça os seguites passos:
 
-docker build -t kaban . #esse comando gera uma imagem docker
+docker build -t kanban . #esse comando gera uma imagem docker
 
 depois execute o script presente nos arquivos (./docker-start.sh)
 
