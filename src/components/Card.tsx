@@ -55,12 +55,6 @@ function Card({name, index, assetid, informations}:props) {
         }
     }
 
-
-    function teste() {
-        var mensagem = `openAssetCard:${assetSelected}`;
-        window.parent.postMessage(mensagem, 'http://pmi.mediaportal.com.br:8084')
-    }
-
     return(
         <Draggable draggableId={assetid.toString()} index={index} key={assetid}>
 
@@ -83,7 +77,7 @@ function Card({name, index, assetid, informations}:props) {
 
                     <hr className={style.hr}/>
                     
-                    <p className={style.text} style={{fontSize: '15px'}}>
+                    <p className={style.text} style={{fontSize: '14px'}}>
                         {informations.deliveryDate}
                     </p>
 
