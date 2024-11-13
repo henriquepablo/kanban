@@ -143,7 +143,7 @@ export default function Board() {
         if (!destination) return;
 
         if (destination.droppableId === source.droppableId && destination.droppableId === source.droppableId) return;
-        // if (destination.droppableId < source.droppableId) return;
+        if (destination.droppableId < source.droppableId) return;
 
         const sourceColId = source.droppableId
         const destColId = destination.droppableId;
